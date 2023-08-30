@@ -51,9 +51,10 @@ function Login() {
     <form
       onSubmit={ handleSubmit }
       onChange={ handleFormChange }
-      className="flex flex-col items-center justify-center h-screen w-screen gap-2"
+      className="flex flex-col items-center justify-center
+      h-screen w-screen gap-2 p-4 sm:p-8 md:p-16 lg:p-20"
     >
-      <img src={ logoSvg } alt="logo" className="mb-20" />
+      <img src={ logoSvg } alt="logo" className="mb-20 sm:mb-12" />
       <p
         className="mb-3 font-medium
         font-poppins text-black"
