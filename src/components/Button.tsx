@@ -7,29 +7,31 @@ VariantProps<typeof button> & {
 };
 
 const button = tv({
-  base: `bg-blue-500 text-white rounded-lg shadow-lg
-  hover:brightness-75
-  disabled:bg-gray-300 disabled:text-gray-500 disabled:brightness-100
+  base: `rounded-lg h-14 text-2xl mt-2
+  bg-primary-light-100 text-primary-light-300
+  dark:bg-primary-dark-100-dark-100 dark:text-primary-dark-300
   `,
   variants: {
     color: {
-      blue: 'bg-blue-500',
-      red: 'bg-red-500',
     },
-    size: {
-      md: 'w-40 h-14',
+    width: {
+      md: 'w-40',
+      full: 'w-full',
+    },
+    fixed: {
+      top: 'fixed top-0',
+      bottom: 'fixed bottom-0',
     },
   },
   defaultVariants: {
-    color: 'blue',
-    size: 'md',
+    width: 'full',
   },
 });
 
-function Button({ size, color, children, ...props } : ButtonProps) {
+function Button({ width, color, fixed, children, ...props } : ButtonProps) {
   const { className } = props;
   return (
-    <button { ...props } className={ button({ size, color, className }) }>
+    <button { ...props } className={ button({ width, color, fixed, className }) }>
       {children}
     </button>
   );
