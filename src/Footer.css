@@ -1,0 +1,17 @@
+.footer {
+  align-items: center;
+  background-color: white;
+  bottom: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.footer a img {
+  height: 30px;
+  width: 30px;
+}
