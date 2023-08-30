@@ -92,7 +92,7 @@ function Login() {
         className="bg-primary-button py-2 w-64 rounded-md text-white
         disabled:opacity-50 disabled:cursor-not-allowed font-poppins font-medium mt-5"
       >
-        Enter
+        Entrar
       </button>
     </form>
   );
