@@ -22,16 +22,21 @@ const button = tv({
       top: 'fixed top-0',
       bottom: 'fixed bottom-0',
     },
+    height: {
+      default: 'h-14',
+      small: 'h-10',
+    },
   },
   defaultVariants: {
     width: 'full',
+    height: 'default',
   },
 });
 
-function Button({ width, color, fixed, children, ...props } : ButtonProps) {
+function Button({ height, width, color, fixed, children, ...props } : ButtonProps) {
   const { className } = props;
   return (
-    <button { ...props } className={ button({ width, color, fixed, className }) }>
+    <button { ...props } className={ button({ height, width, color, fixed, className }) }>
       {children}
     </button>
   );
