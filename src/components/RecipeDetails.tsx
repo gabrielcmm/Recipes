@@ -124,7 +124,7 @@ function RecipeDetails() {
       {!recipeStates.isDone
       && (
         <Button
-          className="fixed bottom-0 right-0"
+          fixed="bottom"
           data-testid="start-recipe-btn"
           onClick={ () => navigate(`${pathname}/in-progress`) }
         >
