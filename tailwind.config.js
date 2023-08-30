@@ -15,6 +15,7 @@ export default {
           'dark-100': '#FF6F00',
           'dark-200': '#dc5200',
           'dark-300': '#8d0000',
+          'button': '#4A7530', // coloquei aqui pq ainda não temos tema definido
         },
         accent: {
           'light-100': '#FFC107',
@@ -36,6 +37,9 @@ export default {
           'dark-200': '#292929',
           'dark-300': '#404040',
         },
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
       },
     },
   },
