@@ -108,12 +108,17 @@ function RecipeDetails() {
         category={ category }
         name={ recipe.genericInfos.name }
         image={ recipe.genericInfos.image }
+        recipe={ recipe }
       />
-      <RecipeCard.LikeButton recipe={ recipe } />
-      <RecipeCard.ShareButton
-        shareBtnTestId="share-btn"
-        linkToClipboard={ window.location.href }
-      />
+
+      {/* <div className="flex gap-8">
+        <RecipeCard.LikeButton recipe={ recipe } />
+        <RecipeCard.ShareButton
+          shareBtnTestId="share-btn"
+          linkToClipboard={ window.location.href }
+        />
+      </div> */}
+
       <RecipeCard.IngredientList ingredientList={ validIngredients } />
       <RecipeCard.Instructions
         instruction={ recipe.fullObject.strInstructions }
@@ -124,7 +129,6 @@ function RecipeDetails() {
       {!recipeStates.isDone
       && (
         <Button
-          fixed="bottom"
           data-testid="start-recipe-btn"
           onClick={ () => navigate(`${pathname}/in-progress`) }
         >
