@@ -79,6 +79,7 @@ function Login() {
           className={ inputVariant() }
         />
         <button
+          type="button"
           className="absolute right-2 top-2 cursor-pointer
           focus:outline-none leading-none"
           onClick={ toggleShowPassword }
