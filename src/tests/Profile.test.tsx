@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import renderWithRouter from './helpers/renderWithRouter';
-import Profile from '../components/Profile';
+import Profile from '../pages/Profile';
 
 describe('Testa a página de Perfil', () => {
   test('Verifica se a página renderiza os botões corretos', () => {
