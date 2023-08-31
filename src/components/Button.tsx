@@ -10,6 +10,7 @@ const button = tv({
   base: `rounded-lg h-14 text-2xl mt-2
   bg-primary-light-100 text-primary-light-300
   dark:bg-primary-dark-100-dark-100 dark:text-primary-dark-300
+  disabled:grayscale
   `,
   variants: {
     color: {

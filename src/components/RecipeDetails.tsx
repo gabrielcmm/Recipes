@@ -103,7 +103,7 @@ function RecipeDetails() {
   }, [] as string[][]);
 
   return (
-    <div>
+    <>
       <RecipeCard.Info
         category={ category }
         name={ recipe.genericInfos.name }
@@ -125,17 +125,18 @@ function RecipeDetails() {
         videoUrl={ videoUrl }
       />
       <RecipeCard.Recommended recommendations={ recipe.recommendations } />
-
+      <div className="h-16 w-full bg-red" />
       {!recipeStates.isDone
       && (
         <Button
+          fixed="bottom"
           data-testid="start-recipe-btn"
           onClick={ () => navigate(`${pathname}/in-progress`) }
         >
           { recipeStates.inProgress ? 'Continue Recipe' : 'Start Recipe' }
         </Button>
       )}
-    </div>
+    </>
   );
 }
 

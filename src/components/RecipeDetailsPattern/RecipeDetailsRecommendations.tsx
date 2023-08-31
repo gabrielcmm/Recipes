@@ -1,3 +1,7 @@
+import React, { useRef } from 'react';
+import userEvent from '@testing-library/user-event';
+import { any } from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { GenericRecipe } from '../../types';
 
 type RecipeDetailsRecommendationsProps = {
@@ -7,33 +11,52 @@ type RecipeDetailsRecommendationsProps = {
 function RecipeDetailsRecommendations({
   recommendations,
 }: RecipeDetailsRecommendationsProps) {
+  const child = useRef<any>(null);
+  const navigate = useNavigate();
+
+  const scroll = (scrollOffset: number) => {
+    child.current.scrollLeft += scrollOffset;
+  };
+
   return (
-    <>
-      <h2>Recomendadas</h2>
-      <div className="flex flex-row w-80 overflow-x-scroll">
-        {
-        recommendations.map((recommendation, index) => (
-          <div
-            className="flex-none w-1/2 mr-4"
-            key={ index }
-            data-testid={ `${index}-recommendation-card` }
-          >
-            <img
-              src={ recommendation.image }
-              alt={ recommendation.name }
-              width={ 200 }
-              height={ 200 }
-            />
-            <p
-              data-testid={ `${index}-recommendation-title` }
-            >
-              { recommendation.name }
-            </p>
-          </div>
+    <div className="p-2">
+      <h2 className="text-2xl mb-3">Recomendadas</h2>
+      <div className="w-full flex items-center relative">
+        <button
+          className=" absolute h-10 w-4 bg-black left-1
+         text-white opacity-60 rounded-full"
+          onClick={ () => scroll(-100) }
+        >
+          {'  '}
+          {' < '}
+          {'  '}
+        </button>
+        <div
+          className="flex items-center w-full gap-2 overflow-x-hidden scroll-smooth"
+          ref={ child }
+        >
+          {
+        recommendations.map((recommendation) => (
+          <img
+            key={ recommendation.id }
+            src={ recommendation.image }
+            alt={ recommendation.name }
+            className="w-50 h-40 rounded-lg"
+          />
         ))
       }
+        </div>
+        <button
+          className=" h-10 w-4 bg-black absolute right-1
+         text-white opacity-60 rounded-full"
+          onClick={ () => scroll(100) }
+        >
+          {'  '}
+          {' > '}
+          {'  '}
+        </button>
       </div>
-    </>
+    </div>
   );
 }
 
