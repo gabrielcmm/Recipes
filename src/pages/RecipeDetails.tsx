@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { fetchDrinks, fetchMeals } from '../services/api';
-import RecipeCard from './RecipeDetailsPattern/index';
+import RecipeCard from '../components/RecipeDetailsPattern/index';
 import {
   DoneRecipeType,
   DrinkRecipe,
@@ -10,7 +10,7 @@ import {
   MealRecipe,
 } from '../types';
 import useLocalStorage from '../hooks/useLocalStorage';
-import Button from './Button';
+import Button from '../components/Button';
 
 const INITIAL_RECIPE = {
   genericInfos: {} as GenericRecipe,

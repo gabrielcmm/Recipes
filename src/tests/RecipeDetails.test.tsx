@@ -1,6 +1,6 @@
 import { vi } from 'vitest';
 import { waitFor } from '@testing-library/dom';
-import RecipeDetails from '../components/RecipeDetails';
+import RecipeDetails from '../pages/RecipeDetails';
 import { drinks, mealWithIngredients, meals } from './mocks';
 import renderWithRouterAndRedux from './helpers/renderWithRouter';
 
