@@ -86,7 +86,7 @@ function Ingredient({ ingredient, index, hasCheckBox = false }: IngredientProps)
     <li
       className={ `border-1 p-3 m-2 shadow-md shadow-bg-light-300 rounded-lg
       ${pathname.includes('/in-progress')
-        ? 'hover:shadow-primary-light-200 transition-all' : ''}` }
+        ? 'hover:shadow-primary-button transition-all' : ''}` }
       key={ index }
       data-testid={ `${index}-ingredient-name-and-measure` }
     >
@@ -95,7 +95,7 @@ function Ingredient({ ingredient, index, hasCheckBox = false }: IngredientProps)
         aria-checked={ (isChecked && pathname.includes('/in-progress')) }
         data-testid={ `${index}-ingredient-step` }
         className="w-full aria-checked:line-through
-        decoration-primary-light-100 decoration-2
+        decoration-primary-button decoration-2
         aria-checked:hover:underline transition-all"
       >
         {hasCheckBox

@@ -106,7 +106,7 @@ function RecipeInProgress() {
     navigate('/done-recipes');
   };
   return (
-    <div>
+    <div className="font-medium font-poppins">
 
       <RecipeCard.Info
         recipe={ recipe }

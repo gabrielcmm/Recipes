@@ -103,7 +103,7 @@ function RecipeDetails() {
   }, [] as string[][]);
 
   return (
-    <>
+    <div className="font-medium font-poppins">
       <RecipeCard.Info
         category={ category }
         name={ recipe.genericInfos.name }
@@ -136,7 +136,7 @@ function RecipeDetails() {
           { recipeStates.inProgress ? 'Continue Recipe' : 'Start Recipe' }
         </Button>
       )}
-    </>
+    </div>
   );
 }
 
