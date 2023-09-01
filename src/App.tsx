@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from './components/Layout';
 import Recipes from './components/Recipes';
-import RecipeDetails from './components/RecipeDetails';
+import RecipeDetails from './pages/RecipeDetails';
 import RecipeInProgress from './pages/RecipeInProgress';
 import Profile from './pages/Profile';
 import DoneRecipes from './pages/DoneRecipes';
