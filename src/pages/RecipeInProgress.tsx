@@ -106,18 +106,19 @@ function RecipeInProgress() {
     navigate('/done-recipes');
   };
   return (
-    <div>
-      <h1>Instructions</h1>
+    <div className="font-medium font-poppins">
+
       <RecipeCard.Info
+        recipe={ recipe }
         category={ category }
         name={ recipe.genericInfos.name }
         image={ recipe.genericInfos.image }
       />
-      <RecipeCard.LikeButton recipe={ recipe } />
+      {/* <RecipeCard.LikeButton recipe={ recipe } />
       <RecipeCard.ShareButton
         shareBtnTestId="share-btn"
         linkToClipboard={ window.location.href.replace('/in-progress', '') }
-      />
+      /> */}
       <RecipeCard.IngredientList ingredientList={ validIngredients } hasCheckBox />
       <RecipeCard.Instructions
         instruction={ recipe.fullObject.strInstructions }

@@ -7,24 +7,25 @@ function RecipeDetailsInstruction(
   { instruction, videoUrl = undefined }: RecipeDetailsInstructionsProps,
 ) {
   return (
-    <div>
-      <h2>Instructions</h2>
+    <div className="p-2">
+      <h2 className="text-2xl mb-3">Instructions</h2>
       <p
         data-testid="instructions"
-        className="whitespace-break-spaces leading-2"
+        className="prose whitespace-pre-wrap text-text-light-100"
       >
         {instruction}
       </p>
 
       {videoUrl && (
-        <>
-          <h2>Video</h2>
+        <div>
+          <h2 className="text-2xl my-3">Video</h2>
           <iframe
+            className="w-full aspect-video rounded-xl"
             data-testid="video"
             title="video"
             src={ videoUrl }
           />
-        </>
+        </div>
       )}
     </div>
   );

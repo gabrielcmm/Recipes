@@ -7,9 +7,10 @@ VariantProps<typeof button> & {
 };
 
 const button = tv({
-  base: `rounded-lg h-14 text-2xl mt-2
-  bg-primary-light-100 text-primary-light-300
+  base: `rounded-lg h-14 font-poppins font-medium mt-2 
+  bg-primary-button text-white
   dark:bg-primary-dark-100-dark-100 dark:text-primary-dark-300
+  disabled:opacity-50 disabled:cursor-not-allowed
   `,
   variants: {
     color: {

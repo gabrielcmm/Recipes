@@ -103,24 +103,29 @@ function RecipeDetails() {
   }, [] as string[][]);
 
   return (
-    <div>
+    <div className="font-medium font-poppins">
       <RecipeCard.Info
         category={ category }
         name={ recipe.genericInfos.name }
         image={ recipe.genericInfos.image }
+        recipe={ recipe }
       />
-      <RecipeCard.LikeButton recipe={ recipe } />
-      <RecipeCard.ShareButton
-        shareBtnTestId="share-btn"
-        linkToClipboard={ window.location.href }
-      />
+
+      {/* <div className="flex gap-8">
+        <RecipeCard.LikeButton recipe={ recipe } />
+        <RecipeCard.ShareButton
+          shareBtnTestId="share-btn"
+          linkToClipboard={ window.location.href }
+        />
+      </div> */}
+
       <RecipeCard.IngredientList ingredientList={ validIngredients } />
       <RecipeCard.Instructions
         instruction={ recipe.fullObject.strInstructions }
         videoUrl={ videoUrl }
       />
       <RecipeCard.Recommended recommendations={ recipe.recommendations } />
-
+      <div className="h-16 w-full bg-red" />
       {!recipeStates.isDone
       && (
         <Button

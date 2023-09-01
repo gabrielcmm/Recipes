@@ -10,9 +10,9 @@ function RecipeDetailsIngredient(
     hasCheckBox = false }: RecipeIngredientProps,
 ) {
   return (
-    <div>
-      <h1>Ingredients</h1>
-      <ul>
+    <div className="p-2">
+      <h1 className="text-2xl mb-4">Ingredientes</h1>
+      <ul className="">
         {ingredientList.map((ingredient, index) => (
           <Ingredient
             key={ index }
