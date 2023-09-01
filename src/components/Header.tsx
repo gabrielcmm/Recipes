@@ -23,7 +23,7 @@ function Header() {
   return (
     <header>
       <div>
-        <h1 className="text-primary-light-100 dark:text-primary-dark-300">app</h1>
+        <h1 className="text-primary-light-100 dark:text-primary-dark-300">Pesquisa</h1>
         <button onClick={ toggleDarkMode }>DarkMode/LightMode</button>
         <button onClick={ () => navigate('/profile') }>
           <img src={ profileIcon } alt="profile icon" data-testid="profile-top-btn" />
