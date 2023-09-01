@@ -100,11 +100,14 @@ function Recipes() {
   }, [location.pathname]);
 
   return (
-    <div>
-      <div>
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-4">
         <button
           data-testid="All-category-filter"
           onClick={ () => setSelectedCategory(null) }
+          className={ `rounded-full py-1 px-3 border ${
+            selectedCategory === null ? 'bg-gray-100' : 'bg-white'
+          }` }
         >
           All
         </button>
@@ -114,23 +117,35 @@ function Recipes() {
             key={ category }
             data-testid={ `${category}-category-filter` }
             onClick={ () => handleCategoryClick(category) }
+            className={ `rounded-full py-1 px-3 border ${
+              selectedCategory === category ? 'bg-gray-100' : 'bg-white'
+            }` }
           >
             {category}
           </button>
         ))}
       </div>
-      <ul>
+
+      <ul className="grid grid-cols-2 gap-4">
         {recipes.map((recipe, index) => (
-          <li key={ recipe.id } data-testid={ `${index}-recipe-card` }>
+          <li
+            key={ recipe.id }
+            data-testid={ `${index}-recipe-card` }
+            className="relative"
+          >
             <button
               onClick={ () => handleRecipeClick(recipe.id) }
+              className="w-full
+              h-full
+              flex flex-col items-center justify-center rounded-lg bg-white p-2 shadow-md"
             >
               <img
                 src={ recipe.image }
                 alt={ recipe.name }
                 data-testid={ `${index}-card-img` }
+                className="w-20 h-20 object-cover mb-2 rounded-full"
               />
-              <p data-testid={ `${index}-card-name` }>
+              <p data-testid={ `${index}-card-name` } className="text-center">
                 {recipe.name}
               </p>
             </button>
