@@ -6,7 +6,7 @@ function Layout() {
   return (
     <>
       <main
-        className="bg-bg-light-100 text-text-light-100
+        className="h-screen bg-bg-light-100 text-text-light-100
         dark:bg-bg-dark-100 dark:text-text-dark-100"
       >
         <Header />
